@@ -1,0 +1,59 @@
+{
+  "compilerOptions": {
+    // Target and Module Settings
+    "target": "es2020",
+    // "node20" emits CommonJS here because package.json has "type": "commonjs",
+    // and allows require() of ESM-only packages such as uuid@13 (Node >= 22.12).
+    // It replaces the deprecated "moduleResolution": "node" (node10).
+    "module": "node20",
+    "lib": ["es2020"],
+
+    // Module Resolution
+    "moduleResolution": "node16",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    
+    // File Layout
+    "rootDir": "./",
+    "outDir": "./dist",
+    
+    // Type Checking
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    
+    // Output Options
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    
+    // Advanced Options
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    
+    // Types
+    "types": ["node"],
+    "typeRoots": ["./node_modules/@types"]
+  },
+  "include": [
+    "./scripts/**/*",
+    "./test/**/*",
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "artifacts",
+    "cache",
+    "chain"
+  ],
+  "ts-node": {
+    "esm": false,
+    "experimentalSpecifierResolution": "node"
+  }
+}

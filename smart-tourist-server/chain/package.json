@@ -1,0 +1,6 @@
+{
+  "name": "smart-tourist-chain",
+  "private": true,
+  "type": "module",
+  "description": "Hardhat 3 workspace (ESM-only) for the Solidity contracts in ../contracts. Uses the parent package's node_modules."
+}

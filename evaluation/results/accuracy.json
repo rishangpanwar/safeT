@@ -1,0 +1,873 @@
+{
+  "generatedAt": "2026-11-21T11:07:01.699Z",
+  "quick": false,
+  "note": "All results are on synthetic data (simulated physiology and motion). They measure how the algorithms behave and compare versions fairly; they are not clinical validation.",
+  "vitals": {
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "config": {
+      "seed": 1,
+      "sessionsPerScenario": 60,
+      "normalSessions": 120,
+      "restingSessions": 40,
+      "normalMinutes": 30,
+      "preRollSeconds": 300,
+      "episodeSeconds": 900,
+      "stepSeconds": 5,
+      "healthyHours": 97.97222222222223,
+      "windowsScored": 124540,
+      "episodeSessions": 300
+    },
+    "headlineLabels": {
+      "sessionAccuracy": "Session accuracy",
+      "sensitivity": "Sensitivity (episodes detected)",
+      "specificity": "Specificity (healthy sessions alarm-free)",
+      "windowF1": "Window F1 (Red vs established pathology)",
+      "falseAlarmsPerHour": "False Red alarms per trekker-hour",
+      "healthyFlagged": "Healthy time shown Yellow/Red",
+      "rocAuc": "Isolation Forest ROC-AUC"
+    },
+    "summary": {
+      "original": {
+        "sessionAccuracy": {
+          "mean": 0.8995652173913044,
+          "min": 0.8891304347826087,
+          "max": 0.908695652173913
+        },
+        "sensitivity": {
+          "mean": 0.8646666666666667,
+          "min": 0.85,
+          "max": 0.88
+        },
+        "specificity": {
+          "mean": 0.9650000000000001,
+          "min": 0.94375,
+          "max": 0.9875
+        },
+        "windowF1": {
+          "mean": 0.8412764989078303,
+          "min": 0.8350832298448299,
+          "max": 0.8482691603881927
+        },
+        "falseAlarmsPerHour": {
+          "mean": 0.2796711085908704,
+          "min": 0.17351857102353274,
+          "max": 0.4184859654096966
+        },
+        "healthyFlagged": {
+          "mean": 0.2799121066061809,
+          "min": 0.2588035157357528,
+          "max": 0.2912957187411398
+        },
+        "rocAuc": {
+          "mean": 0.9229163454029152,
+          "min": 0.9173382040314386,
+          "max": 0.9332991023058037
+        }
+      },
+      "final": {
+        "sessionAccuracy": {
+          "mean": 0.9930434782608696,
+          "min": 0.9869565217391304,
+          "max": 0.9978260869565218
+        },
+        "sensitivity": {
+          "mean": 0.9986666666666666,
+          "min": 0.9966666666666667,
+          "max": 1
+        },
+        "specificity": {
+          "mean": 0.9824999999999999,
+          "min": 0.96875,
+          "max": 1
+        },
+        "windowF1": {
+          "mean": 0.9690418100574334,
+          "min": 0.9667669552835259,
+          "max": 0.9712359293754642
+        },
+        "falseAlarmsPerHour": {
+          "mean": 0.13677346186560815,
+          "min": 0.04082789906436064,
+          "max": 0.22455344485398354
+        },
+        "healthyFlagged": {
+          "mean": 0.07625744258576694,
+          "min": 0.04539268500141763,
+          "max": 0.09804366316983272
+        },
+        "rocAuc": {
+          "mean": 0.9607377426124384,
+          "min": 0.9582044721082852,
+          "max": 0.9643351131600073
+        }
+      }
+    },
+    "detail": {
+      "original": {
+        "generatedAt": "2026-11-21T11:06:38.666Z",
+        "config": {
+          "seed": 1,
+          "sessionsPerScenario": 60,
+          "normalSessions": 120,
+          "restingSessions": 40,
+          "normalMinutes": 30,
+          "preRollSeconds": 300,
+          "episodeSeconds": 900,
+          "stepSeconds": 5,
+          "healthyHours": 97.97222222222223,
+          "windowsScored": 124540,
+          "episodeSessions": 300
+        },
+        "iforestRocAuc": 0.9173382040314386,
+        "detectors": {
+          "mews": {
+            "session": {
+              "tp": 257,
+              "fp": 8,
+              "tn": 152,
+              "fn": 43,
+              "accuracy": 0.8891304347826087,
+              "precision": 0.969811320754717,
+              "recall": 0.8566666666666667,
+              "specificity": 0.95,
+              "f1": 0.9097345132743363
+            },
+            "window": {
+              "tp": 32856,
+              "fp": 1400,
+              "tn": 69140,
+              "fn": 12007,
+              "accuracy": 0.8838245106279733,
+              "precision": 0.9591312470808033,
+              "recall": 0.7323629717138845,
+              "specificity": 0.9801531046214913,
+              "f1": 0.8305463921434802
+            },
+            "falseAlarmsPerHour": 0.31641621774879497,
+            "healthyNonGreenFraction": 0.29031755032605616,
+            "perScenario": {
+              "ams": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 74,
+                "p90LatencyS": 129,
+                "medianEarlyWarningS": 4
+              },
+              "cardiac": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 109,
+                "p90LatencyS": 209,
+                "medianEarlyWarningS": 59
+              },
+              "hypothermia": {
+                "sessions": 60,
+                "detected": 59,
+                "sensitivity": 0.9833333333333333,
+                "medianLatencyS": 294,
+                "p90LatencyS": 444,
+                "medianEarlyWarningS": 4
+              },
+              "heatstroke": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 174,
+                "p90LatencyS": 249,
+                "medianEarlyWarningS": 69
+              },
+              "fall": {
+                "sessions": 60,
+                "detected": 18,
+                "sensitivity": 0.3,
+                "medianLatencyS": 79,
+                "p90LatencyS": 79,
+                "medianEarlyWarningS": 64
+              }
+            }
+          },
+          "iforest": {
+            "session": {
+              "tp": 160,
+              "fp": 0,
+              "tn": 160,
+              "fn": 140,
+              "accuracy": 0.6956521739130435,
+              "precision": 1,
+              "recall": 0.5333333333333333,
+              "specificity": 1,
+              "f1": 0.6956521739130436
+            },
+            "window": {
+              "tp": 11399,
+              "fp": 0,
+              "tn": 70540,
+              "fn": 33464,
+              "accuracy": 0.7100248693708135,
+              "precision": 1,
+              "recall": 0.2540846577357734,
+              "specificity": 1,
+              "f1": 0.4052113326934699
+            },
+            "falseAlarmsPerHour": 0,
+            "healthyNonGreenFraction": 0.021009356393535582,
+            "perScenario": {
+              "ams": {
+                "sessions": 60,
+                "detected": 57,
+                "sensitivity": 0.95,
+                "medianLatencyS": 209,
+                "p90LatencyS": 309,
+                "medianEarlyWarningS": 59
+              },
+              "cardiac": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 189,
+                "p90LatencyS": 319,
+                "medianEarlyWarningS": 99
+              },
+              "hypothermia": {
+                "sessions": 60,
+                "detected": 24,
+                "sensitivity": 0.4,
+                "medianLatencyS": 239,
+                "p90LatencyS": 359,
+                "medianEarlyWarningS": 79
+              },
+              "heatstroke": {
+                "sessions": 60,
+                "detected": 16,
+                "sensitivity": 0.26666666666666666,
+                "medianLatencyS": 194,
+                "p90LatencyS": 289,
+                "medianEarlyWarningS": 64
+              },
+              "fall": {
+                "sessions": 60,
+                "detected": 3,
+                "sensitivity": 0.05,
+                "medianLatencyS": 59,
+                "p90LatencyS": 64,
+                "medianEarlyWarningS": 44
+              }
+            }
+          },
+          "fusedBasic": {
+            "session": {
+              "tp": 257,
+              "fp": 8,
+              "tn": 152,
+              "fn": 43,
+              "accuracy": 0.8891304347826087,
+              "precision": 0.969811320754717,
+              "recall": 0.8566666666666667,
+              "specificity": 0.95,
+              "f1": 0.9097345132743363
+            },
+            "window": {
+              "tp": 33186,
+              "fp": 1400,
+              "tn": 69140,
+              "fn": 11677,
+              "accuracy": 0.8866840550072355,
+              "precision": 0.9595211935465218,
+              "recall": 0.7397186991507478,
+              "specificity": 0.9801531046214913,
+              "f1": 0.8354038439753805
+            },
+            "falseAlarmsPerHour": 0.31641621774879497,
+            "healthyNonGreenFraction": 0.29031755032605616,
+            "perScenario": {
+              "ams": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 74,
+                "p90LatencyS": 129,
+                "medianEarlyWarningS": 4
+              },
+              "cardiac": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 109,
+                "p90LatencyS": 209,
+                "medianEarlyWarningS": 59
+              },
+              "hypothermia": {
+                "sessions": 60,
+                "detected": 59,
+                "sensitivity": 0.9833333333333333,
+                "medianLatencyS": 259,
+                "p90LatencyS": 444,
+                "medianEarlyWarningS": 4
+              },
+              "heatstroke": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 174,
+                "p90LatencyS": 249,
+                "medianEarlyWarningS": 69
+              },
+              "fall": {
+                "sessions": 60,
+                "detected": 18,
+                "sensitivity": 0.3,
+                "medianLatencyS": 79,
+                "p90LatencyS": 79,
+                "medianEarlyWarningS": 64
+              }
+            }
+          },
+          "fused": {
+            "session": {
+              "tp": 299,
+              "fp": 5,
+              "tn": 155,
+              "fn": 1,
+              "accuracy": 0.9869565217391304,
+              "precision": 0.9835526315789473,
+              "recall": 0.9966666666666667,
+              "specificity": 0.96875,
+              "f1": 0.990066225165563
+            },
+            "window": {
+              "tp": 42286,
+              "fp": 147,
+              "tn": 70393,
+              "fn": 2577,
+              "accuracy": 0.9763957609420899,
+              "precision": 0.9965357151273773,
+              "recall": 0.9425584557430399,
+              "specificity": 0.9979160759852566,
+              "f1": 0.9687958211143695
+            },
+            "falseAlarmsPerHour": 0.19393252055571306,
+            "healthyNonGreenFraction": 0.08117380209810036,
+            "perScenario": {
+              "ams": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 89,
+                "p90LatencyS": 139,
+                "medianEarlyWarningS": 44
+              },
+              "cardiac": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 114,
+                "p90LatencyS": 209,
+                "medianEarlyWarningS": 89
+              },
+              "hypothermia": {
+                "sessions": 60,
+                "detected": 59,
+                "sensitivity": 0.9833333333333333,
+                "medianLatencyS": 259,
+                "p90LatencyS": 444,
+                "medianEarlyWarningS": 89
+              },
+              "heatstroke": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 179,
+                "p90LatencyS": 249,
+                "medianEarlyWarningS": 94
+              },
+              "fall": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 139,
+                "p90LatencyS": 144,
+                "medianEarlyWarningS": 64
+              }
+            }
+          }
+        }
+      },
+      "final": {
+        "generatedAt": "2026-11-21T11:06:41.161Z",
+        "config": {
+          "seed": 1,
+          "sessionsPerScenario": 60,
+          "normalSessions": 120,
+          "restingSessions": 40,
+          "normalMinutes": 30,
+          "preRollSeconds": 300,
+          "episodeSeconds": 900,
+          "stepSeconds": 5,
+          "healthyHours": 97.97222222222223,
+          "windowsScored": 124540,
+          "episodeSessions": 300
+        },
+        "iforestRocAuc": 0.9582638726332894,
+        "detectors": {
+          "mews": {
+            "session": {
+              "tp": 257,
+              "fp": 8,
+              "tn": 152,
+              "fn": 43,
+              "accuracy": 0.8891304347826087,
+              "precision": 0.969811320754717,
+              "recall": 0.8566666666666667,
+              "specificity": 0.95,
+              "f1": 0.9097345132743363
+            },
+            "window": {
+              "tp": 32856,
+              "fp": 1400,
+              "tn": 69140,
+              "fn": 12007,
+              "accuracy": 0.8838245106279733,
+              "precision": 0.9591312470808033,
+              "recall": 0.7323629717138845,
+              "specificity": 0.9801531046214913,
+              "f1": 0.8305463921434802
+            },
+            "falseAlarmsPerHour": 0.31641621774879497,
+            "healthyNonGreenFraction": 0.29031755032605616,
+            "perScenario": {
+              "ams": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 74,
+                "p90LatencyS": 129,
+                "medianEarlyWarningS": 4
+              },
+              "cardiac": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 109,
+                "p90LatencyS": 209,
+                "medianEarlyWarningS": 59
+              },
+              "hypothermia": {
+                "sessions": 60,
+                "detected": 59,
+                "sensitivity": 0.9833333333333333,
+                "medianLatencyS": 294,
+                "p90LatencyS": 444,
+                "medianEarlyWarningS": 4
+              },
+              "heatstroke": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 174,
+                "p90LatencyS": 249,
+                "medianEarlyWarningS": 69
+              },
+              "fall": {
+                "sessions": 60,
+                "detected": 18,
+                "sensitivity": 0.3,
+                "medianLatencyS": 79,
+                "p90LatencyS": 79,
+                "medianEarlyWarningS": 64
+              }
+            }
+          },
+          "iforest": {
+            "session": {
+              "tp": 187,
+              "fp": 0,
+              "tn": 160,
+              "fn": 113,
+              "accuracy": 0.7543478260869565,
+              "precision": 1,
+              "recall": 0.6233333333333333,
+              "specificity": 1,
+              "f1": 0.7679671457905544
+            },
+            "window": {
+              "tp": 9698,
+              "fp": 0,
+              "tn": 70540,
+              "fn": 35165,
+              "accuracy": 0.6952852178886164,
+              "precision": 1,
+              "recall": 0.21616922631121413,
+              "specificity": 1,
+              "f1": 0.3554920181081725
+            },
+            "falseAlarmsPerHour": 0,
+            "healthyNonGreenFraction": 0.047434079954635666,
+            "perScenario": {
+              "ams": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 119,
+                "p90LatencyS": 209,
+                "medianEarlyWarningS": 54
+              },
+              "cardiac": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 124,
+                "p90LatencyS": 219,
+                "medianEarlyWarningS": 74
+              },
+              "hypothermia": {
+                "sessions": 60,
+                "detected": 23,
+                "sensitivity": 0.38333333333333336,
+                "medianLatencyS": 244,
+                "p90LatencyS": 419,
+                "medianEarlyWarningS": 94
+              },
+              "heatstroke": {
+                "sessions": 60,
+                "detected": 34,
+                "sensitivity": 0.5666666666666667,
+                "medianLatencyS": 209,
+                "p90LatencyS": 314,
+                "medianEarlyWarningS": 59
+              },
+              "fall": {
+                "sessions": 60,
+                "detected": 10,
+                "sensitivity": 0.16666666666666666,
+                "medianLatencyS": 54,
+                "p90LatencyS": 79,
+                "medianEarlyWarningS": 29
+              }
+            }
+          },
+          "fusedBasic": {
+            "session": {
+              "tp": 258,
+              "fp": 8,
+              "tn": 152,
+              "fn": 42,
+              "accuracy": 0.8913043478260869,
+              "precision": 0.9699248120300752,
+              "recall": 0.86,
+              "specificity": 0.95,
+              "f1": 0.9116607773851589
+            },
+            "window": {
+              "tp": 33039,
+              "fp": 1400,
+              "tn": 69140,
+              "fn": 11824,
+              "accuracy": 0.8854102579655642,
+              "precision": 0.95934841313627,
+              "recall": 0.7364420569288723,
+              "specificity": 0.9801531046214913,
+              "f1": 0.8332450631762124
+            },
+            "falseAlarmsPerHour": 0.31641621774879497,
+            "healthyNonGreenFraction": 0.29031755032605616,
+            "perScenario": {
+              "ams": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 69,
+                "p90LatencyS": 114,
+                "medianEarlyWarningS": 4
+              },
+              "cardiac": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 109,
+                "p90LatencyS": 204,
+                "medianEarlyWarningS": 59
+              },
+              "hypothermia": {
+                "sessions": 60,
+                "detected": 59,
+                "sensitivity": 0.9833333333333333,
+                "medianLatencyS": 289,
+                "p90LatencyS": 444,
+                "medianEarlyWarningS": 4
+              },
+              "heatstroke": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 174,
+                "p90LatencyS": 249,
+                "medianEarlyWarningS": 69
+              },
+              "fall": {
+                "sessions": 60,
+                "detected": 19,
+                "sensitivity": 0.31666666666666665,
+                "medianLatencyS": 69,
+                "p90LatencyS": 79,
+                "medianEarlyWarningS": 64
+              }
+            }
+          },
+          "fused": {
+            "session": {
+              "tp": 299,
+              "fp": 5,
+              "tn": 155,
+              "fn": 1,
+              "accuracy": 0.9869565217391304,
+              "precision": 0.9835526315789473,
+              "recall": 0.9966666666666667,
+              "specificity": 0.96875,
+              "f1": 0.990066225165563
+            },
+            "window": {
+              "tp": 42094,
+              "fp": 125,
+              "tn": 70415,
+              "fn": 2769,
+              "accuracy": 0.9749226623224699,
+              "precision": 0.9970392477320638,
+              "recall": 0.9382787597797739,
+              "specificity": 0.998227955769776,
+              "f1": 0.9667669552835259
+            },
+            "falseAlarmsPerHour": 0.20413949532180323,
+            "healthyNonGreenFraction": 0.08769492486532464,
+            "perScenario": {
+              "ams": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 84,
+                "p90LatencyS": 139,
+                "medianEarlyWarningS": 44
+              },
+              "cardiac": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 109,
+                "p90LatencyS": 204,
+                "medianEarlyWarningS": 74
+              },
+              "hypothermia": {
+                "sessions": 60,
+                "detected": 59,
+                "sensitivity": 0.9833333333333333,
+                "medianLatencyS": 289,
+                "p90LatencyS": 444,
+                "medianEarlyWarningS": 89
+              },
+              "heatstroke": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 174,
+                "p90LatencyS": 249,
+                "medianEarlyWarningS": 94
+              },
+              "fall": {
+                "sessions": 60,
+                "detected": 60,
+                "sensitivity": 1,
+                "medianLatencyS": 139,
+                "p90LatencyS": 144,
+                "medianEarlyWarningS": 64
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "falls": {
+    "generatedAt": "2026-11-21T11:07:01.699Z",
+    "config": {
+      "seed": 2026,
+      "tracesPerClass": 200,
+      "sampleRateHz": 50
+    },
+    "perClass": {
+      "trip_fall": {
+        "label": "Trip / slip fall, stays down",
+        "positive": true,
+        "traces": 200,
+        "flagged": {
+          "fourStage": 200,
+          "final": 200
+        },
+        "flagRate": {
+          "fourStage": 1,
+          "final": 1
+        }
+      },
+      "fall_from_height": {
+        "label": "Fall from height, stays down",
+        "positive": true,
+        "traces": 200,
+        "flagged": {
+          "fourStage": 200,
+          "final": 200
+        },
+        "flagRate": {
+          "fourStage": 1,
+          "final": 1
+        }
+      },
+      "collapse": {
+        "label": "Collapse (syncope), stays down",
+        "positive": true,
+        "traces": 200,
+        "flagged": {
+          "fourStage": 0,
+          "final": 198
+        },
+        "flagRate": {
+          "fourStage": 0,
+          "final": 0.99
+        }
+      },
+      "walking": {
+        "label": "Walking",
+        "positive": false,
+        "traces": 200,
+        "flagged": {
+          "fourStage": 0,
+          "final": 0
+        },
+        "flagRate": {
+          "fourStage": 0,
+          "final": 0
+        }
+      },
+      "running": {
+        "label": "Running",
+        "positive": false,
+        "traces": 200,
+        "flagged": {
+          "fourStage": 0,
+          "final": 0
+        },
+        "flagRate": {
+          "fourStage": 0,
+          "final": 0
+        }
+      },
+      "jumping": {
+        "label": "Jumping",
+        "positive": false,
+        "traces": 200,
+        "flagged": {
+          "fourStage": 0,
+          "final": 0
+        },
+        "flagRate": {
+          "fourStage": 0,
+          "final": 0
+        }
+      },
+      "sit_down_hard": {
+        "label": "Sitting down hard",
+        "positive": false,
+        "traces": 200,
+        "flagged": {
+          "fourStage": 0,
+          "final": 0
+        },
+        "flagRate": {
+          "fourStage": 0,
+          "final": 0
+        }
+      },
+      "lie_down_to_rest": {
+        "label": "Lying down to rest",
+        "positive": false,
+        "traces": 200,
+        "flagged": {
+          "fourStage": 0,
+          "final": 0
+        },
+        "flagRate": {
+          "fourStage": 0,
+          "final": 0
+        }
+      },
+      "flop_down_to_rest": {
+        "label": "Flopping down to rest (awake)",
+        "positive": false,
+        "traces": 200,
+        "flagged": {
+          "fourStage": 0,
+          "final": 0
+        },
+        "flagRate": {
+          "fourStage": 0,
+          "final": 0
+        }
+      },
+      "phone_drop": {
+        "label": "Phone dropped on the ground",
+        "positive": false,
+        "traces": 200,
+        "flagged": {
+          "fourStage": 122,
+          "final": 122
+        },
+        "flagRate": {
+          "fourStage": 0.61,
+          "final": 0.61
+        }
+      },
+      "fall_then_recover": {
+        "label": "Fall, then gets up",
+        "positive": false,
+        "traces": 200,
+        "flagged": {
+          "fourStage": 36,
+          "final": 36
+        },
+        "flagRate": {
+          "fourStage": 0.18,
+          "final": 0.18
+        }
+      }
+    },
+    "overall": {
+      "fourStage": {
+        "tp": 400,
+        "fp": 158,
+        "tn": 1442,
+        "fn": 200,
+        "accuracy": 0.8372727272727273,
+        "precision": 0.7168458781362007,
+        "recall": 0.6666666666666666,
+        "specificity": 0.90125,
+        "f1": 0.690846286701209
+      },
+      "final": {
+        "tp": 598,
+        "fp": 158,
+        "tn": 1442,
+        "fn": 2,
+        "accuracy": 0.9272727272727272,
+        "precision": 0.791005291005291,
+        "recall": 0.9966666666666667,
+        "specificity": 0.90125,
+        "f1": 0.8820058997050148
+      }
+    }
+  }
+}

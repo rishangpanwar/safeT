@@ -18,7 +18,6 @@
     },
     "android": {
       "package": "com.cset343.smarttourist",
-      "versionCode": 1,
       "adaptiveIcon": {
         "backgroundColor": "#1e66d0",
         "foregroundImage": "./assets/images/android-icon-foreground.png",

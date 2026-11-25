@@ -1,0 +1,36 @@
+# EAS Build uploads this Git folder; when this file exists it is used instead of the .gitignore files.
+#
+# Why it is needed: eas-cli on Windows does not apply .gitignore files in subfolders (it compares
+# "folder/" with "folder\..." paths), so it tried to upload smart-tourist-server/.demo-db (locked
+# by the running demo database) and smart-tourist-mobile-app/android (a stale local build that
+# would make EAS skip its own prebuild). Rules here are relative to this folder.
+
+# Only the mobile app is needed to build the APK.
+# (No trailing "/" on folder rules: eas-cli checks folder paths without one, so "x/" never matches.)
+/*
+!/smart-tourist-mobile-app
+
+# Same exclusions as smart-tourist-mobile-app/.gitignore
+node_modules
+.expo
+dist
+web-build
+expo-env.d.ts
+.kotlin
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+.metro-health-check*
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+.DS_Store
+*.pem
+.env*.local
+*.tsbuildinfo
+app-example
+/smart-tourist-mobile-app/ios
+/smart-tourist-mobile-app/android
